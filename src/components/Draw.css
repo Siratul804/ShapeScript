@@ -33,6 +33,18 @@ input[type="color"] {
   transition: background-color 0.3s ease;
 }
 
+.clear_btn {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 select:hover,
 input[type="color"]:hover {
   background-color: #555;
@@ -52,7 +64,7 @@ pre {
   padding: 15px;
   border-radius: 8px;
   width: 100%;
-  max-width: 800px;
+  max-width: 1120px;
   overflow-x: auto;
   font-size: 14px;
   line-height: 1.5;
