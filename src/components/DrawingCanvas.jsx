@@ -61,13 +61,6 @@ const DrawingCanvas = () => {
         2 * Math.PI
       );
       context.stroke();
-    } else if (shape === "triangle") {
-      context.beginPath();
-      context.moveTo(startX, startY);
-      context.lineTo(startX + (offsetX - startX) / 2, offsetY);
-      context.lineTo(offsetX, startY);
-      context.closePath();
-      context.stroke();
     }
   };
 
@@ -107,13 +100,6 @@ const DrawingCanvas = () => {
         2 * Math.PI
       );
       context.stroke();
-    } else if (shape.type === "triangle") {
-      context.beginPath();
-      context.moveTo(shape.x, shape.y + shape.height);
-      context.lineTo(shape.x + shape.width / 2, shape.y);
-      context.lineTo(shape.x + shape.width, shape.y + shape.height);
-      context.closePath();
-      context.stroke();
     }
   };
 
@@ -128,16 +114,6 @@ const DrawingCanvas = () => {
           }px; width:${shape.radius * 2}px; height:${
             shape.radius * 2
           }px; border-radius: 50%; border: 1px solid ${shape.color};"></div>`;
-        } else if (shape.type === "triangle") {
-          return `<div style="position:absolute; left:${shape.x}px; top:${
-            shape.y
-          }px; width: 0; height: 0; border-left: ${
-            shape.width / 2
-          }px solid transparent; border-right: ${
-            shape.width / 2
-          }px solid transparent; border-bottom: ${shape.height}px solid ${
-            shape.color
-          };"></div>`;
         }
         return "";
       })
@@ -177,7 +153,6 @@ const DrawingCanvas = () => {
           <select onChange={handleShapeChange} value={shape}>
             <option value="rectangle">Rectangle</option>
             <option value="circle">Circle</option>
-            <option value="triangle">Triangle</option>
           </select>
         </div>
         <div
